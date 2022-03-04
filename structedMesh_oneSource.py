@@ -1,3 +1,11 @@
+import numpy as np
+from scipy.spatial import Delaunay
+import matplotlib.pyplot as plt
+import time
+from datetime import timedelta
+import math
+
+
 def InCircle(X, Y, X0, Y0, A):
     if (X - X0)**2 + (Y - Y0)**2 <= A**2:
         return True
@@ -51,13 +59,6 @@ def DataSource(X, Y, X0, Y0, A):
     
     return np.array(RemoveDuplicates(rez), dtype=float)
 
-
-import numpy as np
-from scipy.spatial import Delaunay
-import matplotlib.pyplot as plt
-import time
-from datetime import timedelta
-import math
 
 #ДАННЫЕ
 
