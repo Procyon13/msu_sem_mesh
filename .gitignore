@@ -1,2 +1,6 @@
 # ignore a file type
 *.ipynb_checkpoints
+*.ipynb
+
+# ignore an entire directory
+/img/
