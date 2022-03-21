@@ -71,21 +71,6 @@ class Mesh(object):
 class AdaptiveMesh(Mesh):
     
     def generation_additional_simplices(self, r, x0, y0):
-#         print(self.nodes_in_circle(r, x0, y0))
-        for node in self.nodes_in_circle(r, x0, y0):
-            new_simplex_it = 0                                  
-            for new_vertex_it in range(4):  
-                if self.in_circle(self.diagonal_vertex(node, new_vertex_it), r, x0, y0):
-                    new_vertex_id = self.add_new_vertex(node, self.diagonal_vertex(node, new_vertex_it))  
-                    for it in range(4):
-                        self.add_additional_simplex(node, new_vertex_id, new_simplex_it)
-                        new_simplex_it += 1
-                else:
-                    new_simplex_it += 4
-    
-class AdaptiveMesh(Mesh):
-    
-    def generation_additional_simplices(self, r, x0, y0):
         # проходим по всем узлам, лежащим внутри окружности
         #print(self.nodes_in_circle(r, x0, y0))
         for node in self.nodes_in_circle(r, x0, y0):
